@@ -75,21 +75,21 @@ export default async function Home() {
       <div className="relative flex flex-col justify-end" style={{ height: 500 }}>
         <Background />
         <div className="container mx-auto pb-8">
-          <div className="prose prose-invert">
+          <div className="prose prose-invert px-4">
             <Intro />
           </div>
         </div>
       </div>
 
       {/* Datasets */}
-      <div className="container mx-auto py-8">
+      <div className="container mx-auto py-8 px-4">
         <h2 className="font-bold text-5">Datensätze</h2>
         <p className="text-gray-10">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde qui, rerum eos quis
           exercitationem quas voluptatem id.
         </p>
 
-        <div className="grid gap-5 grid-cols-3 pt-8">
+        <div className="grid gap-5 grid-cols-1  sm:grid-cols-2 md:grid-cols-3 pt-8">
           {result.datasets.map((dataset) => (
             <Card asChild key={`dataset-${dataset.id}`}>
               <Link href={`https://munigrid.de/hbg/dataset/${dataset.id}`}>
