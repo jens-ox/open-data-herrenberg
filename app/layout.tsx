@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import { clsx } from 'clsx'
-import { inter, mono } from '@/utils/fonts'
 import { Contexts } from '@/components/Contexts'
 
 import './globals.css'
@@ -17,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" suppressHydrationWarning>
-      <body className={clsx(inter.variable, mono.variable, 'antialiased font-sans')}>
+      <body className={clsx('antialiased font-sans')}>
         <Contexts>{children}</Contexts>
       </body>
     </html>

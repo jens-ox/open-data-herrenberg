@@ -1,8 +1,13 @@
 @import 'tailwindcss/base';
 @import '@radix-ui/themes/styles.css';
+@import url('https://use.typekit.net/ohc5nbo.css');
 
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --font-sans: 'Interstate';
+}
 
 .radix-themes {
   --default-font-family: var(--font-sans);

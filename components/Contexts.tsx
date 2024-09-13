@@ -5,7 +5,7 @@ import { ReactNode } from 'react'
 
 export const Contexts = ({ children }: { children: ReactNode }) => {
   return (
-    <Theme accentColor="indigo" radius="medium">
+    <Theme accentColor="green" radius="medium">
       {children}
     </Theme>
   )
