@@ -1,9 +1,17 @@
 import { Logo } from '@/components/Logo'
 import Intro from './Intro.mdx'
 import Background from '@/components/Background'
-import { Avatar, Card, Code, Text } from '@radix-ui/themes'
+import { Avatar, Button, Card, Code, Text } from '@radix-ui/themes'
 import Link from 'next/link'
-import { BikeIcon, CalendarIcon, DatabaseIcon, MedalIcon, TreesIcon, VoteIcon } from 'lucide-react'
+import {
+  BikeIcon,
+  CalendarIcon,
+  DatabaseIcon,
+  GithubIcon,
+  MedalIcon,
+  TreesIcon,
+  VoteIcon
+} from 'lucide-react'
 
 interface Dataset {
   id: number
@@ -40,11 +48,26 @@ export default async function Home() {
     <div>
       {/* Navbar */}
       <div className="py-4 border-b border-gray-6">
-        <div className="flex items-center gap-6 container mx-auto">
-          <div className="w-24">
-            <Logo />
+        <div className="flex items-center gap-6 justify-between container mx-auto">
+          <div className="flex items-center gap-6">
+            <div className="w-24">
+              <Logo />
+            </div>
+            <h1 className="font-bold text-3">Open Data Portal</h1>
           </div>
-          <h1 className="font-bold text-3">Open Data Portal</h1>
+          <div className="flex gap-6">
+            <Button asChild variant="soft">
+              <Link href="https://www.munigrid.de/api/docs" target="_blank">
+                API
+              </Link>
+            </Button>
+            <Button asChild variant="soft">
+              <Link href="https://github.com/jens-ox/open-data-herrenberg" target="_blank">
+                <GithubIcon className="size-4" />
+                GitHub
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
 
