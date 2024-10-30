@@ -7,6 +7,7 @@ import {
   BikeIcon,
   CalendarIcon,
   DatabaseIcon,
+  FileTextIcon,
   GithubIcon,
   MedalIcon,
   TreesIcon,
@@ -34,6 +35,8 @@ const getIcon = (key: string) => {
       return <TreesIcon className="size-5" />
     case 'hbg-vereinsregister':
       return <MedalIcon className="size-5" />
+    case 'hbg-ris':
+      return <FileTextIcon className="size-5" />
     default:
       return <DatabaseIcon className="size-5" />
   }
