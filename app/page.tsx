@@ -43,7 +43,6 @@ export default async function Home() {
   const orgRequest = await fetch('https://munigrid.de/api/v0/org/hbg')
   const result = (await orgRequest.json()) as { datasets: Dataset[] }
 
-  console.log(result.datasets)
   return (
     <div>
       {/* Navbar */}
@@ -85,8 +84,12 @@ export default async function Home() {
       <div className="container mx-auto py-8 px-4">
         <h2 className="font-bold text-5">Datensätze</h2>
         <p className="text-gray-10">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde qui, rerum eos quis
-          exercitationem quas voluptatem id.
+          Neue Datensätze werden kontinuierlich hinzugefügt. Falls Ihnen ein bestimmter Datensatz
+          fehlt, können Sie sich unter{' '}
+          <a className="text-accent-10 underline" href="mailto:data@herrenbergd.de">
+            data@herrenberg.de
+          </a>{' '}
+          an uns wenden.
         </p>
 
         <div className="grid gap-5 grid-cols-1  sm:grid-cols-2 md:grid-cols-3 pt-8">
