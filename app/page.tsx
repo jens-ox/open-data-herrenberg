@@ -49,7 +49,7 @@ export default async function Home() {
   return (
     <div>
       {/* Navbar */}
-      <div className="py-4 border-b border-gray-6">
+      <div className="py-4 border-b border-gray-6 px-2">
         <div className="flex items-center gap-6 justify-between container mx-auto">
           <div className="flex items-center gap-6">
             <div className="w-24">
