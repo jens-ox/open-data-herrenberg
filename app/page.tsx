@@ -119,7 +119,23 @@ export default async function Home() {
             </Card>
           ))}
         </div>
+
+        {/* footer */}
       </div>
+      <footer className="bg-gray-2 mt-4">
+        <div className="container mx-auto p-4">
+          <p className="text-center text-gray-10 text-sm">
+            <a
+              className="underline"
+              href="https://www.herrenberg.de/impressum"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Impressum
+            </a>
+          </p>
+        </div>
+      </footer>
     </div>
   )
 }
