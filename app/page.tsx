@@ -47,84 +47,86 @@ export default async function Home() {
   const result = (await orgRequest.json()) as { datasets: Dataset[] }
 
   return (
-    <div>
-      {/* Navbar */}
-      <div className="py-4 border-b border-gray-6 px-2">
-        <div className="flex items-center gap-6 justify-between container mx-auto">
-          <div className="flex items-center gap-6">
-            <div className="w-24">
-              <Logo />
+    <div className="flex flex-col justify-between min-h-screen">
+      <div>
+        {/* Navbar */}
+        <div className="py-4 border-b border-gray-6 px-2">
+          <div className="flex items-center gap-6 justify-between container mx-auto">
+            <div className="flex items-center gap-6">
+              <div className="w-24">
+                <Logo />
+              </div>
+              <h1 className="font-bold text-3">Open Data Portal</h1>
             </div>
-            <h1 className="font-bold text-3">Open Data Portal</h1>
-          </div>
-          <div className="flex gap-6">
-            <Button asChild variant="soft">
-              <Link href="https://www.munigrid.de/api/docs" target="_blank">
-                API
-              </Link>
-            </Button>
-            <Button asChild variant="soft">
-              <Link href="https://github.com/jens-ox/open-data-herrenberg" target="_blank">
-                <GithubIcon className="size-4" />
-                GitHub
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Hero */}
-      <div className="relative flex flex-col justify-end" style={{ height: 500 }}>
-        <Background />
-        <div className="container mx-auto pb-8">
-          <div className="prose prose-invert px-4">
-            <Intro />
+            <div className="flex gap-6">
+              <Button asChild variant="soft">
+                <Link href="https://www.munigrid.de/api/docs" target="_blank">
+                  API
+                </Link>
+              </Button>
+              <Button asChild variant="soft">
+                <Link href="https://github.com/jens-ox/open-data-herrenberg" target="_blank">
+                  <GithubIcon className="size-4" />
+                  GitHub
+                </Link>
+              </Button>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* Datasets */}
-      <div className="container mx-auto py-8 px-4">
-        <h2 className="font-bold text-5">Datensätze</h2>
-        <p className="text-gray-10">
-          Neue Datensätze werden kontinuierlich hinzugefügt. Falls Ihnen ein bestimmter Datensatz
-          fehlt, können Sie sich unter{' '}
-          <a className="text-accent-10 underline" href="mailto:data@herrenbergd.de">
-            data@herrenberg.de
-          </a>{' '}
-          an uns wenden.
-        </p>
+        {/* Hero */}
+        <div className="relative flex flex-col justify-end" style={{ height: 500 }}>
+          <Background />
+          <div className="container mx-auto pb-8">
+            <div className="prose prose-invert px-4">
+              <Intro />
+            </div>
+          </div>
+        </div>
 
-        <div className="grid gap-5 grid-cols-1  sm:grid-cols-2 md:grid-cols-3 pt-8">
-          {result.datasets.map((dataset) => (
-            <Card asChild key={`dataset-${dataset.id}`}>
-              <Link href={`https://munigrid.de/hbg/dataset/${dataset.id}`}>
-                <div className="flex flex-col gap-2">
-                  <div className="flex items-center gap-3">
-                    <Avatar fallback={getIcon(dataset.key)} />
-                    <div className="flex flex-col">
-                      <Text>{dataset.title}</Text>
-                      <div>
-                        <Code size="1" color="gray">
-                          {dataset.key}
-                        </Code>
+        {/* Datasets */}
+        <div className="container mx-auto py-8 px-4">
+          <h2 className="font-bold text-5">Datensätze</h2>
+          <p className="text-gray-10">
+            Neue Datensätze werden kontinuierlich hinzugefügt. Falls Ihnen ein bestimmter Datensatz
+            fehlt, können Sie sich unter{' '}
+            <a className="text-accent-10 underline" href="mailto:data@herrenbergd.de">
+              data@herrenberg.de
+            </a>{' '}
+            an uns wenden.
+          </p>
+
+          <div className="grid gap-5 grid-cols-1  sm:grid-cols-2 md:grid-cols-3 pt-8">
+            {result.datasets.map((dataset) => (
+              <Card asChild key={`dataset-${dataset.id}`}>
+                <Link href={`https://munigrid.de/hbg/dataset/${dataset.id}`}>
+                  <div className="flex flex-col gap-2">
+                    <div className="flex items-center gap-3">
+                      <Avatar fallback={getIcon(dataset.key)} />
+                      <div className="flex flex-col">
+                        <Text>{dataset.title}</Text>
+                        <div>
+                          <Code size="1" color="gray">
+                            {dataset.key}
+                          </Code>
+                        </div>
                       </div>
                     </div>
+                    <Text as="div" size="2" color="gray">
+                      {dataset.description}
+                    </Text>
                   </div>
-                  <Text as="div" size="2" color="gray">
-                    {dataset.description}
-                  </Text>
-                </div>
-              </Link>
-            </Card>
-          ))}
+                </Link>
+              </Card>
+            ))}
+          </div>
         </div>
-
-        {/* footer */}
       </div>
+
+      {/* footer */}
       <footer className="bg-gray-2 mt-4">
         <div className="container mx-auto p-4">
-          <p className="text-center text-gray-10 text-sm">
+          <p className="text-center text-gray-10 text-2">
             <a
               className="underline"
               href="https://www.herrenberg.de/impressum"
