@@ -10,6 +10,7 @@ import {
   FileTextIcon,
   GithubIcon,
   MedalIcon,
+  PiggyBankIcon,
   TreesIcon,
   VoteIcon
 } from 'lucide-react'
@@ -37,6 +38,8 @@ const getIcon = (key: string) => {
       return <MedalIcon className="size-5" />
     case 'hbg-ris':
       return <FileTextIcon className="size-5" />
+    case 'haushalt':
+      return <PiggyBankIcon className="size-5" />
     default:
       return <DatabaseIcon className="size-5" />
   }
