@@ -102,7 +102,7 @@ export default async function Home() {
           <div className="grid gap-5 grid-cols-1  sm:grid-cols-2 md:grid-cols-3 pt-8">
             {result.datasets.map((dataset) => (
               <Card asChild key={`dataset-${dataset.id}`}>
-                <Link href={`https://munigrid.de/hbg/dataset/${dataset.id}`}>
+                <Link href={`https://munigrid.de/hbg/dataset/${dataset.key}`}>
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-3">
                       <Avatar fallback={getIcon(dataset.key)} />
