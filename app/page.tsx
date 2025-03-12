@@ -27,16 +27,16 @@ const getIcon = (key: string) => {
   switch (key) {
     case 'buchungen-klosterhof':
       return <CalendarIcon className="size-5" />
-    case 'fahrradabstellanlagen':
-    case 'lastenraeder-herrenberg':
+    case 'radabstellanlagen':
+    case 'lastenraeder':
       return <BikeIcon className="size-5" />
     case 'gemeinderatswahl':
       return <VoteIcon className="size-5" />
     case 'geo-baumkataster':
       return <TreesIcon className="size-5" />
-    case 'hbg-vereinsregister':
+    case 'vereinsregister':
       return <MedalIcon className="size-5" />
-    case 'hbg-ris':
+    case 'ris':
       return <FileTextIcon className="size-5" />
     case 'haushalt':
       return <PiggyBankIcon className="size-5" />
